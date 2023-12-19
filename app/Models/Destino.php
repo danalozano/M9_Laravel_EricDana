@@ -15,5 +15,7 @@ class Destino extends Model
         'descripcion',
         'precio',
         'pais',
+        'fecha_ida',
+        'fecha_vuelta'
     ];
 }
