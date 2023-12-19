@@ -23,8 +23,15 @@ class DestinoSeeder extends Seeder
         Destino::create([
             'nombre' => 'Barcelona',
             'descripcion' => 'Capital de la provincia de Cataluña',
-            'precio' => 1200.50,
+            'precio' => 2000.50,
             'pais' => 'España',
+        ]);
+
+        Destino::create([
+            'nombre' => 'Paris',
+            'descripcion' => 'Capital de Francia',
+            'precio' => 0.50,
+            'pais' => 'Francia',
         ]);
     }
 }
