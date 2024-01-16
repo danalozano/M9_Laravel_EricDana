@@ -13,7 +13,8 @@ class DestinoController extends Controller
      */
     public function index()
     {
-        //
+        $destinaciones = Destinacion::all();
+        return view('destinaciones.index', compact('destinaciones'));
     }
 
     /**
