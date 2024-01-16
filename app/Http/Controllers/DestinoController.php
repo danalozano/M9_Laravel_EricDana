@@ -13,8 +13,8 @@ class DestinoController extends Controller
      */
     public function index()
     {
-        $destinaciones = Destinacion::all();
-        return view('destinaciones.index', compact('destinaciones'));
+        $destino = Destino::all();
+        return view('destino.index', compact('destino'));
     }
 
     /**
@@ -38,7 +38,9 @@ class DestinoController extends Controller
      */
     public function show(Destino $destino)
     {
-        //
+        $destino = Destino::find($id);
+        return view('destino.show', compact('destino'));
+
     }
 
     /**
