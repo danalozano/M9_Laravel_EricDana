@@ -17,8 +17,8 @@ return new class extends Migration
             $table->text('descripcion');
             $table->decimal('precio', 10, 2);
             $table->string('pais');
-            $table->date('fecha_ida');
-            $table->date('fecha_vuelta');
+            $table->string('fecha_ida');
+            $table->string('fecha_vuelta');
             $table->timestamps();
         });
     }
