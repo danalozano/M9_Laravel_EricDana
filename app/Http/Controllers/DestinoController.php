@@ -13,8 +13,8 @@ class DestinoController extends Controller
      */
     public function index()
     {
-        $destino = Destino::all();
-        return view('destino.index', compact('destino'));
+        $destinos = Destino::all();
+        return view('destino.index', compact('destinos'));
     }
 
     /**
@@ -22,7 +22,7 @@ class DestinoController extends Controller
      */
     public function create()
     {
-        //
+        return view('destino.create');
     }
 
     /**
@@ -30,7 +30,9 @@ class DestinoController extends Controller
      */
     public function store(StoreDestinoRequest $request)
     {
-        //
+        Destino::create($request->validated());
+
+        return redirect()->route('destino.index')->with('success', 'Destino creado exitosamente.');
     }
 
     /**
@@ -38,9 +40,7 @@ class DestinoController extends Controller
      */
     public function show(Destino $destino)
     {
-        $destino = Destino::find($id);
         return view('destino.show', compact('destino'));
-
     }
 
     /**
@@ -48,7 +48,7 @@ class DestinoController extends Controller
      */
     public function edit(Destino $destino)
     {
-        //
+        return view('destino.edit', compact('destino'));
     }
 
     /**
@@ -56,7 +56,9 @@ class DestinoController extends Controller
      */
     public function update(UpdateDestinoRequest $request, Destino $destino)
     {
-        //
+        $destino->update($request->validated());
+
+        return redirect()->route('destino.index')->with('success', 'Destino actualizado exitosamente.');
     }
 
     /**
@@ -64,6 +66,8 @@ class DestinoController extends Controller
      */
     public function destroy(Destino $destino)
     {
-        //
+        $destino->delete();
+
+        return redirect()->route('destino.index')->with('success', 'Destino eliminado exitosamente.');
     }
 }
